@@ -19,6 +19,9 @@
     <Filter Include="源文件\TREE">
       <UniqueIdentifier>{455181c5-805e-411b-b305-2443d7e9334d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\Sort">
+      <UniqueIdentifier>{24e4d39d-0079-437c-bd33-45703a94aba2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TestForSty.c">
@@ -53,6 +56,9 @@
     </ClCompile>
     <ClCompile Include="TreeOrder.c">
       <Filter>源文件\TREE</Filter>
+    </ClCompile>
+    <ClCompile Include="sort.c">
+      <Filter>源文件\Sort</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
