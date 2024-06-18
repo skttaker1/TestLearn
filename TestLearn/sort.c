@@ -2,6 +2,13 @@
 #include<stdlib.h>
 #include<time.h>
 
+void swich(int* a, int* b)
+{
+	int temp = *a;
+	*a = *b;
+	*b = temp;
+}
+
 void insertNum(int* p, int n)
 {
 	srand(time(NULL));
@@ -28,9 +35,7 @@ void bubbleSort(int* p, int n)
 		{
 			if (p[j] > p[j + 1])
 			{
-				int temp = p[j];
-				p[j] = p[j + 1];
-				p[j + 1] = temp;
+				swich(&p[j], &p[j + 1]);
 			}
 		}
 	}
@@ -38,7 +43,16 @@ void bubbleSort(int* p, int n)
 
 void selectSort(int* p, int n)
 {
-
+	for (int i = 0; i < n - 1; i++)
+	{
+		for (int j = i + 1; j < n; j++)
+		{
+			if (p[i] > p[j])
+			{
+				swich(&p[i], &p[j]);
+			}
+		}
+	}
 		
 }
 
@@ -61,6 +75,10 @@ int main()
 
 	bubbleSort(p, n);
 	printf("bubble sort result:\n");
+	showArr(p, n);
+
+	selectSort(p, n);
+	printf("select sort result:\n");
 	showArr(p, n);
 		
 
