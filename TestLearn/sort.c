@@ -56,7 +56,23 @@ void selectSort(int* p, int n)
 		
 }
 
-int main()
+void insertSort(int* p, int n)
+{
+	for (int i = 1; i < n; i++)
+	{
+		for (int j = i - 1; j > 0; j--)
+		{
+			if (p[j] < p[j - 1])
+			{
+				swich(&p[j], &p[j - 1]);
+			}
+			else
+				break;
+		}
+	}
+}
+
+int main(int argc, char* argv[])
 {
 	int n;
 	printf("please enter the amount of you want to insert:\n");
@@ -73,12 +89,16 @@ int main()
 	showArr(p, n);
 	printf("-------varies sort resualt------------\n");
 
-	bubbleSort(p, n);
+	/*bubbleSort(p, n);
 	printf("bubble sort result:\n");
 	showArr(p, n);
 
 	selectSort(p, n);
 	printf("select sort result:\n");
+	showArr(p, n);*/
+
+	insertSort(p, n);
+	printf("insert sort result:\n");
 	showArr(p, n);
 		
 
