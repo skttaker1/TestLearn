@@ -4,27 +4,25 @@
 typedef struct Node
 {
 	char data;
-	struct Node* lchild;
-	struct Node* rchild;
+	struct Node* lchiled;
+	struct Node* rchiled;
 }tree_node,*tree_list;
 
 tree_list creatTree()
 {
 	char ch;
-	scanf_s(" %c", &ch, 1);
-	if (ch == '#')
+	scanf("%c", &ch);
+	if (ch == "#")
 		return NULL;
-	tree_node* r = (tree_node*)malloc(sizeof(tree_node));
+	tree_node* r = malloc(sizeof(tree_list));
 	if (r == NULL)
 	{
 		printf("malloc tree node fail!!\n");
 		return NULL;
 	}
 	r->data = ch;
-	r->lchild = creatTree();
-	r->rchild = creatTree();
-
-	return r;
+	r->lchiled = creatTree();
+	r->rchiled = creatTree();
 }
 
 void preorder(tree_node* r)
@@ -34,19 +32,18 @@ void preorder(tree_node* r)
 		return;
 	}
 	printf("%c", r->data);
-	preorder(r->lchild);
-	preorder(r->rchild);
+	preorder(r->lchiled);
+	preorder(r->rchiled);
 }
-
 void inorder(tree_node* r)
 {
 	if (r == NULL)
 	{
 		return;
 	}
-	inorder(r->lchild);
+	inorder(r->lchiled);
 	printf("%c", r->data);
-	inorder(r->rchild);
+	inorder(r->rchiled);
 }
 
 void postorder(tree_list r)
@@ -55,12 +52,12 @@ void postorder(tree_list r)
 	{
 		return;
 	}
-	postorder(r->lchild);
-	postorder(r->rchild);
+	postorder(r->lchiled);
+	postorder(r->rchiled);
 	printf("%c", r->data);
 }
 
-void showBinTree(void (*p)(tree_node*), tree_node* r,const char* s)
+void showBinTree(void (*p)(tree_node*), tree_node* r, char* s)
 {
 	printf("%s", s);
 	p(r);  
@@ -73,8 +70,8 @@ void clearTree(tree_node* r)
 	{
 		return;
 	}
-	clearTree(r->lchild);
-	clearTree(r->rchild);
+	clearTree(r->lchiled);
+	clearTree(r->rchiled);
 	free(r);
 }
 
@@ -96,17 +93,14 @@ int main()
 	c.rchiled = &f;
 
 #endif
-	tree_node* r = creatTree();
 
 	printf("preoder:");
-	preorder(r);
+	preorder(&a);
 	printf("\n");
-	showBinTree(preorder, r, "preoder:");
+	showBinTree(preorder, &a, "preoder:");
 
-	showBinTree(inorder, r, "inorder:");
-	showBinTree(postorder, r, "postorder:");
-
-	clearTree(r);
+	showBinTree(inorder, &a, "inorder:");
+	showBinTree(postorder, &a, "postorder:");
 
 	return 0;
 }

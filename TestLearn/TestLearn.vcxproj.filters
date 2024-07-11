@@ -22,9 +22,6 @@
     <Filter Include="源文件\Sort">
       <UniqueIdentifier>{24e4d39d-0079-437c-bd33-45703a94aba2}</UniqueIdentifier>
     </Filter>
-    <Filter Include="源文件\CPP">
-      <UniqueIdentifier>{acaad20b-7466-4c67-bd7b-6a52ff5b1d68}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TestForSty.c">
@@ -62,12 +59,6 @@
     </ClCompile>
     <ClCompile Include="sort.c">
       <Filter>源文件\Sort</Filter>
-    </ClCompile>
-    <ClCompile Include="D:\CppDevLearning\test&amp;study\FirSty\FirSty\cpptest.cpp">
-      <Filter>源文件\CPP</Filter>
-    </ClCompile>
-    <ClCompile Include="classTest.cpp">
-      <Filter>源文件\CPP</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
