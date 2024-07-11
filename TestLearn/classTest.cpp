@@ -113,7 +113,8 @@ int main()
 
 	cout << '\0';*/
 
-
+	student* p = new student();
+	p->initInfo("zongyuan", 18);
 
 	return 0;
 }
